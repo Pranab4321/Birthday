@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>🎉 Happy Birthday Monali! 🎉</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, #fbc2c2 0%, #f8e0b0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Flying Balloons Animation */
+        .flying-balloons-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .flying-balloon {
+            position: absolute;
+            bottom: -100px;
+            font-size: 2.5rem;
+            animation: flyUp 8s linear forwards;
+            filter: drop-shadow(0 10px 5px rgba(0,0,0,0.2));
+            z-index: 1000;
+        }
+
+        @keyframes flyUp {
+            0% {
+                bottom: -100px;
+                opacity: 1;
+                transform: translateX(0) rotate(0deg);
+            }
+            25% {
+                transform: translateX(20px) rotate(5deg);
+            }
+            50% {
+                transform: translateX(-20px) rotate(-5deg);
+            }
+            75% {
+                transform: translateX(15px) rotate(3deg);
+            }
+            100% {
+                bottom: 110%;
+                opacity: 0.8;
+                transform: translateX(0) rotate(0deg);
+            }
+        }
+
+        /* Happy Birthday Animation */
+        .birthday-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            pointer-events: none;
+            animation: fadeOut 5s forwards;
+            animation-delay: 4s;
+        }
+
+        .birthday-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #ff1493;
+            text-shadow: 4px 4px 0 #ffd700, 6px 6px 0 #ff4500;
+            animation: bounce 1s ease infinite;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 30px 50px;
+            border-radius: 100px;
+            backdrop-filter: blur(5px);
+            border: 5px solid gold;
+            box-shadow: 0 0 50px rgba(255,215,0,0.5);
+            text-align: center;
+        }
+
+        .birthday-text small {
+            font-size: 1.8rem;
+            display: block;
+            color: #4a0080;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            70% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: #f00;
+            position: absolute;
+            top: -10px;
+            opacity: 0.8;
+            z-index: 1500;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            to { top: 110%; }
+        }
+
+        .main-card {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 48px 48px 40px 40px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2), 0 0 0 4px #fff9e6 inset;
+            padding: 30px 22px 40px 22px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            border: 2px solid #ffdede;
+        }
+
+        .name-title h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #b34180;
+            text-shadow: 3px 3px 0 #ffd9d9;
+            letter-spacing: -0.5px;
+        }
+
+        .name-title .full-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #a6426f;
+            background: #ffefd2;
+            display: inline-block;
+            padding: 0.3rem 1.5rem;
+            border-radius: 60px;
+            margin: 8px 0 5px;
+            box-shadow: 0 4px 0 #d4a59a;
+        }
+
+        .name-title p {
+            font-size: 1.2rem;
+            color: #5e3c5e;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .balloon-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0 10px;
+            flex-wrap: wrap;
+        }
+
+        .balloon {
+            font-size: 3.5rem;
+            filter: drop-shadow(0 12px 8px #00000033);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(1) { animation-delay: 0s; color: #ff6f91; }
+        .balloon:nth-child(2) { animation-delay: 0.5s; color: #ffd966; }
+        .balloon:nth-child(3) { animation-delay: 1s; color: #6c9bcf; }
+        .balloon:nth-child(4) { animation-delay: 1.3s; color: #b583df; }
+        .balloon:nth-child(5) { animation-delay: 0.2s; color: #ff9472; }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-18px) rotate(4deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .cake-section {
+            background: #fff2d7b3;
+            border-radius: 70px 70px 40px 40px;
+            padding: 22px 10px 18px 10px;
+            margin: 15px 0 20px;
+            border: 2px dashed #f7a1a1;
+            box-shadow: inset 0 -5px 0 #eac0a1;
+            transition: all 0.5s ease;
+        }
+
+        .cake-section.celebrate {
+            background: #ffe4b3;
+            box-shadow: 0 0 50px #ffd700;
+            transform: scale(1.02);
+        }
+
+        .cake-emoji {
+            font-size: 5.2rem;
+            line-height: 1;
+            filter: drop-shadow(0 10px 8px #c99b8b);
+            transition: all 0.5s ease;
+            display: inline-block;
+        }
+
+        .cake-section.celebrate .cake-emoji {
+            transform: scale(1.2) rotate(360deg);
+            filter: drop-shadow(0 0 20px gold);
+        }
+
+        .cake-cut-message {
+            font-size: 1.35rem;
+            font-weight: 700;
+            background: #fda47e;
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50px;
+            border: none;
+            width: fit-content;
+            margin: 10px auto 5px;
+            box-shadow: 0 8px 0 #ad5a42;
+            transition: 0.07s linear;
+            cursor: pointer;
+        }
+
+        .cake-cut-message:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #ad5a42;
+        }
+
+        .cake-cut .cake-emoji {
+            transform: scale(0.9) rotate(4deg);
+            filter: drop-shadow(0 5px 4px #9e6d5e);
+        }
+
+        .wishes {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2e4057;
+            background: #fffbee;
+            padding: 15px 10px;
+            border-radius: 50px;
+            margin: 25px 0 18px;
+            box-shadow: 0 5px 0 #cfb495;
+        }
+
+        .gift-box {
+            background: #fce6b4;
+            border-radius: 60px;
+            padding: 25px 15px;
+            border: 3px solid white;
+        }
+
+        .gift-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #9e3c5b;
+        }
+
+        .payment-icons {
+            font-size: 2rem;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 12px 0;
+            color: #334e68;
+        }
+
+        .upi-section {
+            background: #ffe9bf;
+            padding: 15px;
+            border-radius: 50px;
+            margin: 15px 0;
+        }
+
+        .upi-label {
+            font-size: 0.9rem;
+            color: #5e3c5e;
+        }
+
+        .upi-value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .edit-btn {
+            background: none;
+            border: none;
+            color: #a14444;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .fixed-amount {
+            background: #b34180;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 60px;
+            margin: 15px 0;
+            border: 3px solid gold;
+            text-shadow: 2px 2px 0 #5e3c5e;
+            box-shadow: 0 5px 0 #5e3c5e;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 18px 20px;
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0;
+            box-shadow: 0 8px 0 #128C7E;
+            transition: 0.08s linear;
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0 #128C7E;
+        }
+
+        .gift-message {
+            background: #004d4d;
+            color: #ffefc0;
+            padding: 15px;
+            border-radius: 40px;
+            margin: 10px 0;
+            font-size: 1.1rem;
+            border: 2px solid gold;
+            display: none;
+        }
+
+        .gift-message.show {
+            display: block;
+        }
+
+        .fine-print {
+            font-size: 0.9rem;
+            color: #3d2b3d;
+            background: #f9e9cf;
+            padding: 8px;
+            border-radius: 40px;
+            margin-top: 10px;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        @media (max-width: 400px) {
+            .name-title h1 { font-size: 2rem; }
+            .full-name { font-size: 1.5rem; }
+            .balloon { font-size: 2.8rem; }
+            .birthday-text { font-size: 2.5rem; padding: 20px 30px; }
+            .birthday-text small { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Flying Balloons Container -->
+    <div class="flying-balloons-container" id="flyingBalloons"></div>
+
+    <!-- Birthday Animation Container (hidden initially) -->
+    <div id="birthdayAnimation" class="birthday-animation" style="display: none;">
+        <div class="birthday-text">
+            🎂 HAPPY BIRTHDAY MONA! 🎂
+            <small>Monali Chakraborty</small>
+            <div style="font-size: 2rem;">🎈🎉🎊</div>
+        </div>
+    </div>
+
+    <!-- Audio Element for Birthday Song -->
+    <audio id="birthdaySong" preload="auto">
+<source src="./birthdaySong.mpeg" type="audio/mpeg">
+</audio>
+    <div class="main-card">
+        <div class="name-title">
+            <h1>🎂 Happy Birthday! 🎂</h1>
+            <div class="full-name">Monali Chakraborty</div>
+            <p>my lovely sister Mona 💖</p>
+        </div>
+
+        <!-- Static Balloons -->
+        <div class="balloon-box">
+            <div class="balloon"><i class="fas fa-balloon"></i></div>
+            <div class="balloon"><i class="fas fa-balloon"></i></div>
+            <div class="balloon"><i class="fas fa-balloon"></i></div>
+            <div class="balloon"><i class="fas fa-balloon"></i></div>
+            <div class="balloon"><i class="fas fa-balloon"></i></div>
+        </div>
+
+        <!-- Cake Section -->
+        <div class="cake-section" id="cakeContainer">
+            <span class="cake-emoji" id="cakeEmoji">🎂</span>
+            <div style="font-size: 2rem;">🍒🧁🍓</div>
+            <div class="cake-cut-message" id="cutCakeBtn">
+                <i class="fas fa-utensils"></i> Cut the cake, Mona! <i class="fas fa-birthday-cake"></i>
+            </div>
+            <p id="cakeStatus" style="font-weight:600; margin-top:8px;">✨ ready to slice ✨</p>
+        </div>
+
+        <!-- Wishes -->
+        <div class="wishes">
+            💐 Many many happy returns of the day! 💐<br>
+            <span style="font-size: 1rem;">❤️ love you infinity ❤️</span>
+        </div>
+
+        <!-- Gift Section -->
+        <div class="gift-box">
+            <div class="gift-title">🎁 YOUR GIFT 🎁</div>
+            
+            <div class="payment-icons">
+                <i class="fab fa-google-pay"></i>
+                <i class="fas fa-phone-alt">📱</i>
+                <i class="fas fa-upi">💳</i>
+            </div>
+            
+            <!-- Mona's UPI ID -->
+            <div class="upi-section">
+                <div class="upi-label">👇 Money goes to this UPI ID 👇</div>
+                <div class="upi-value">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="monaUpiDisplay">monali@fampay</span>
+                    <button id="editMonaUpiBtn" class="edit-btn">✏️</button>
+                </div>
+                <div class="note">You can edit your UPI ID if needed</div>
+            </div>
+
+            <!-- FIXED AMOUNT -->
+            <div class="fixed-amount">
+                <div style="font-size: 1rem;">🎁 GIFT AMOUNT 🎁</div>
+                <div>₹ <span id="fixedAmount">100</span></div>
+            </div>
+
+            <!-- WhatsApp Button -->
+            <button class="whatsapp-btn" id="whatsappBtn">
+                <i class="fab fa-whatsapp"></i> CLAIM GIFT & NOTIFY BHAIYA
+            </button>
+
+            <!-- Feedback Message -->
+            <div id="giftFeedback" class="gift-message"></div>
+
+            <div class="fine-print">
+                Open the WhatsApp and send the message to get your gift.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Get elements
+            const cakeContainer = document.getElementById('cakeContainer');
+            const cakeEmoji = document.getElementById('cakeEmoji');
+            const cutBtn = document.getElementById('cutCakeBtn');
+            const cakeStatus = document.getElementById('cakeStatus');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const giftFeedback = document.getElementById('giftFeedback');
+            const monaUpiDisplay = document.getElementById('monaUpiDisplay');
+            const editMonaUpiBtn = document.getElementById('editMonaUpiBtn');
+            const flyingBalloons = document.getElementById('flyingBalloons');
+            const birthdayAnimation = document.getElementById('birthdayAnimation');
+            const birthdaySong = document.getElementById('birthdaySong');
+
+            // ========== CONFIGURATION ==========
+            let MONA_UPI_ID = "mahanandapranab@okicici";  // Change to Mona's actual UPI ID
+            const FIXED_AMOUNT = 1;  // Fixed amount in ₹
+            const BHAIYA_WHATSAPP = "917896072468";  // Change to your WhatsApp number
+            // ====================================
+
+            // Display fixed amount
+            document.getElementById('fixedAmount').textContent = FIXED_AMOUNT.toLocaleString();
+            monaUpiDisplay.textContent = MONA_UPI_ID;
+
+            // Edit Mona's UPI
+            editMonaUpiBtn.addEventListener('click', function() {
+                let newUpi = prompt("Enter your UPI ID (where money should be sent):", MONA_UPI_ID);
+                if (newUpi && newUpi.includes('@')) {
+                    MONA_UPI_ID = newUpi;
+                    monaUpiDisplay.textContent = MONA_UPI_ID;
+                    showMessage(`✅ Your UPI ID updated to ${MONA_UPI_ID}`);
+                } else {
+                    alert("Please enter a valid UPI ID (contains @)");
+                }
+            });
+
+            // Function to create flying balloons
+            function createFlyingBalloons(count = 20) {
+                const colors = ['#ff6f91', '#ffd966', '#6c9bcf', '#b583df', '#ff9472', '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffeaa7'];
+                const balloonIcons = ['fa-balloon', 'fa-heart', 'fa-star', 'fa-gift', 'fa-cake-candles'];
+                
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => {
+                        const balloon = document.createElement('div');
+                        balloon.className = 'flying-balloon';
+                        
+                        // Random position
+                        const left = Math.random() * 100;
+                        // Random size
+                        const size = 1.5 + Math.random() * 2;
+                        // Random color
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        // Random icon
+                        const icon = balloonIcons[Math.floor(Math.random() * balloonIcons.length)];
+                        // Random animation duration
+                        const duration = 5 + Math.random() * 5;
+                        
+                        balloon.style.left = left + '%';
+                        balloon.style.fontSize = (size * 1.5) + 'rem';
+                        balloon.style.color = color;
+                        balloon.style.animation = `flyUp ${duration}s linear forwards`;
+                        balloon.innerHTML = `<i class="fas ${icon}"></i>`;
+                        
+                        flyingBalloons.appendChild(balloon);
+                        
+                        // Remove balloon after animation
+                        setTimeout(() => {
+                            if (balloon.parentNode) {
+                                balloon.remove();
+                            }
+                        }, duration * 1000);
+                    }, i * 200); // Stagger the balloons
+                }
+            }
+
+            // Function to create confetti
+            function createConfetti() {
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        
+                        // Random properties
+                        const left = Math.random() * 100;
+                        const width = 5 + Math.random() * 10;
+                        const height = 5 + Math.random() * 10;
+                        const bg = `hsl(${Math.random() * 360}, 80%, 60%)`;
+                        const duration = 3 + Math.random() * 4;
+                        const delay = Math.random() * 2;
+                        
+                        confetti.style.left = left + '%';
+                        confetti.style.width = width + 'px';
+                        confetti.style.height = height + 'px';
+                        confetti.style.background = bg;
+                        confetti.style.animation = `fall ${duration}s linear forwards`;
+                        confetti.style.animationDelay = delay + 's';
+                        
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            if (confetti.parentNode) {
+                                confetti.remove();
+                            }
+                        }, (duration + delay) * 1000);
+                    }, i * 50);
+                }
+            }
+
+            // Function to play birthday song
+            function playBirthdaySong() {
+                // Try to play the song
+                birthdaySong.play().catch(e => {
+                    console.log("Audio autoplay failed, creating backup sound effect");
+                    // If autoplay fails, create a simple "Happy Birthday" beep effect using Web Audio API
+                    try {
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        if (audioContext.state === 'suspended') {
+                            audioContext.resume();
+                        }
+                        
+                        // Simple "Happy Birthday" melody (just for fun)
+                        const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25];
+                        const times = [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1];
+                        
+                        times.forEach((time, index) => {
+                            setTimeout(() => {
+                                const oscillator = audioContext.createOscillator();
+                                const gainNode = audioContext.createGain();
+                                
+                                oscillator.type = 'sine';
+                                oscillator.frequency.value = notes[index % notes.length];
+                                
+                                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                                
+                                oscillator.connect(gainNode);
+                                gainNode.connect(audioContext.destination);
+                                
+                                oscillator.start();
+                                oscillator.stop(audioContext.currentTime + 0.3);
+                            }, time * 1000);
+                        });
+                    } catch (e) {
+                        console.log("Web Audio API failed");
+                    }
+                });
+            }
+
+            // Cake cutting with full animation
+            cutBtn.addEventListener('click', function() {
+                if (!isCakeCut) {
+                    isCakeCut = true;
+                    
+                    // Update cake state
+                    cakeContainer.classList.add('celebrate');
+                    cakeEmoji.innerHTML = '🎂🔪';
+                    cakeStatus.innerText = '✅ Cake is cut! 🎉 HAPPY BIRTHDAY! 🎉';
+                    
+                    // Show birthday animation
+                    birthdayAnimation.style.display = 'flex';
+                    
+                    // Create flying balloons
+                    createFlyingBalloons(30);
+                    
+                    // Create confetti
+                    createConfetti();
+                    
+                    // Play birthday song
+                    playBirthdaySong();
+                    
+                    // Hide animation after 5 seconds
+                    setTimeout(() => {
+                        birthdayAnimation.style.display = 'none';
+                        cakeContainer.classList.remove('celebrate');
+                    }, 5000);
+                    
+                    // Create more balloons every 2 seconds for a while
+                    let balloonInterval = setInterval(() => {
+                        createFlyingBalloons(5);
+                    }, 2000);
+                    
+                    setTimeout(() => {
+                        clearInterval(balloonInterval);
+                    }, 10000);
+                    
+                } else {
+                    cakeStatus.innerText = '🎉 Cake already cut! Enjoy! 🎉';
+                    // Still throw some balloons
+                    createFlyingBalloons(10);
+                }
+            });
+
+            // Allow double-click for more balloons
+            cakeEmoji.addEventListener('dblclick', function() {
+                createFlyingBalloons(15);
+                showMessage('🎈 More balloons! 🎈');
+            });
+
+            // Helper to show messages
+            function showMessage(msg, isError = false) {
+                giftFeedback.innerHTML = msg;
+                giftFeedback.classList.add('show');
+                giftFeedback.style.background = isError ? '#8B0000' : '#004d4d';
+                setTimeout(() => giftFeedback.classList.remove('show'), 4000);
+            }
+
+            // WhatsApp button
+            whatsappBtn.addEventListener('click', function() {
+                if (!MONA_UPI_ID || !MONA_UPI_ID.includes('@')) {
+                    showMessage('❌ Please enter your UPI ID first', true);
+                    return;
+                }
+                
+                if (BHAIYA_WHATSAPP === "919876543210") {
+                    showMessage('❌ Please ask Bhaiya to set his WhatsApp number', true);
+                    return;
+                }
+
+                const formattedAmount = FIXED_AMOUNT.toLocaleString();
+                const message = `🎁 *BIRTHDAY GIFT CLAIM* 🎁
+
+Hi Bhaiya! 🎂
+
+I cut the cake and now claiming my gift!
+
+━━━━━━━━━━━━━━━
+💰 *Amount:* ₹${formattedAmount}
+👤 *Recipient:* Monali
+💳 *My UPI:* ${MONA_UPI_ID}
+━━━━━━━━━━━━━━━
+
+Please send the money! Love you! ❤️
+— Mona 🎉`;
+
+                window.open(`https://wa.me/${BHAIYA_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank');
+                showMessage(`✅ WhatsApp opened! Send message to Bhaiya for ₹${formattedAmount}`);
+            });
+
+            // Initialize cake state
+            let isCakeCut = false;
+        })();
+    </script>
+</body>
+</html>
