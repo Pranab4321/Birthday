@@ -21,8 +21,8 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* changed from center to allow natural top spacing */
-            padding: 8px; /* reduced padding to use more screen width */
+            align-items: center;
+            padding: 16px;
             position: relative;
             overflow-x: hidden;
         }
@@ -135,63 +135,58 @@
             to { top: 110%; }
         }
 
-        /* ========== MAIN CARD – FIXED FOR MOBILE ========== */
         .main-card {
-            max-width: 100%;          /* was 500px, now uses full width with small margin */
+            max-width: 500px;
             width: 100%;
             background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-radius: 32px 32px 28px 28px;  /* slightly smaller for mobile */
+            border-radius: 48px 48px 40px 40px;
             box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2), 0 0 0 4px #fff9e6 inset;
-            padding: 20px 14px 30px 14px;  /* reduced horizontal padding, slightly less top */
+            padding: 30px 22px 40px 22px;
             text-align: center;
             position: relative;
             z-index: 10;
             border: 2px solid #ffdede;
-            margin: 8px 0;            /* added small vertical margin */
         }
 
-        /* adjust title sizes for smaller screen */
         .name-title h1 {
-            font-size: 2rem;          /* was 2.5rem */
+            font-size: 2.5rem;
             font-weight: 700;
             color: #b34180;
             text-shadow: 3px 3px 0 #ffd9d9;
             letter-spacing: -0.5px;
-            line-height: 1.2;
         }
 
         .name-title .full-name {
-            font-size: 1.5rem;         /* was 1.8rem */
+            font-size: 1.8rem;
             font-weight: 600;
             color: #a6426f;
             background: #ffefd2;
             display: inline-block;
-            padding: 0.2rem 1.2rem;
+            padding: 0.3rem 1.5rem;
             border-radius: 60px;
-            margin: 6px 0 5px;
+            margin: 8px 0 5px;
             box-shadow: 0 4px 0 #d4a59a;
-            word-break: break-word;    /* prevent overflow if name long */
         }
 
         .name-title p {
-            font-size: 1.1rem;          /* was 1.2rem */
+            font-size: 1.2rem;
             color: #5e3c5e;
             font-weight: 600;
-            margin-top: 5px;
+            margin-top: 8px;
         }
 
         .balloon-box {
             display: flex;
             justify-content: center;
-            gap: 10px;                  /* reduced gap */
-            margin: 20px 0 8px;
+            gap: 15px;
+            margin: 25px 0 10px;
             flex-wrap: wrap;
         }
 
         .balloon {
-            font-size: 2.8rem;           /* was 3.5rem */
+            font-size: 3.5rem;
             filter: drop-shadow(0 12px 8px #00000033);
             animation: float 3s ease-in-out infinite;
         }
@@ -204,15 +199,15 @@
 
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(4deg); }
+            50% { transform: translateY(-18px) rotate(4deg); }
             100% { transform: translateY(0px) rotate(0deg); }
         }
 
         .cake-section {
             background: #fff2d7b3;
-            border-radius: 60px 60px 30px 30px;  /* slightly reduced */
-            padding: 18px 8px 15px 8px;
-            margin: 12px 0 18px;
+            border-radius: 70px 70px 40px 40px;
+            padding: 22px 10px 18px 10px;
+            margin: 15px 0 20px;
             border: 2px dashed #f7a1a1;
             box-shadow: inset 0 -5px 0 #eac0a1;
             transition: all 0.5s ease;
@@ -225,7 +220,7 @@
         }
 
         .cake-emoji {
-            font-size: 4.2rem;           /* was 5.2rem */
+            font-size: 5.2rem;
             line-height: 1;
             filter: drop-shadow(0 10px 8px #c99b8b);
             transition: all 0.5s ease;
@@ -238,11 +233,11 @@
         }
 
         .cake-cut-message {
-            font-size: 1.2rem;            /* was 1.35rem */
+            font-size: 1.35rem;
             font-weight: 700;
             background: #fda47e;
             color: white;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 50px;
             border: none;
             width: fit-content;
@@ -263,58 +258,57 @@
         }
 
         .wishes {
-            font-size: 1.2rem;            /* was 1.3rem */
+            font-size: 1.3rem;
             font-weight: 600;
             color: #2e4057;
             background: #fffbee;
-            padding: 12px 8px;
+            padding: 15px 10px;
             border-radius: 50px;
-            margin: 20px 0 16px;
+            margin: 25px 0 18px;
             box-shadow: 0 5px 0 #cfb495;
         }
 
         .gift-box {
             background: #fce6b4;
-            border-radius: 50px;           /* was 60px */
-            padding: 20px 12px;            /* reduced side padding */
+            border-radius: 60px;
+            padding: 25px 15px;
             border: 3px solid white;
         }
 
         .gift-title {
-            font-size: 1.7rem;              /* was 1.9rem */
+            font-size: 1.9rem;
             font-weight: 700;
             color: #9e3c5b;
         }
 
         .payment-icons {
-            font-size: 1.8rem;               /* was 2rem */
+            font-size: 2rem;
             display: flex;
-            gap: 16px;
+            gap: 20px;
             justify-content: center;
-            margin: 10px 0;
+            margin: 12px 0;
             color: #334e68;
         }
 
         .upi-section {
             background: #ffe9bf;
-            padding: 12px 8px;               /* reduced padding */
-            border-radius: 40px;              /* was 50px */
-            margin: 12px 0;
+            padding: 15px;
+            border-radius: 50px;
+            margin: 15px 0;
         }
 
         .upi-label {
-            font-size: 0.85rem;               /* slightly smaller */
+            font-size: 0.9rem;
             color: #5e3c5e;
         }
 
         .upi-value {
-            font-size: 1.3rem;                 /* was 1.4rem */
+            font-size: 1.4rem;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            flex-wrap: wrap;                   /* allow wrap on very small */
+            gap: 8px;
         }
 
         .edit-btn {
@@ -323,17 +317,16 @@
             color: #a14444;
             font-size: 1rem;
             cursor: pointer;
-            padding: 4px;
         }
 
         .fixed-amount {
             background: #b34180;
             color: white;
-            font-size: 2.2rem;                 /* was 2.5rem */
+            font-size: 2.5rem;
             font-weight: bold;
-            padding: 12px 8px;
-            border-radius: 50px;                /* was 60px */
-            margin: 12px 0;
+            padding: 15px;
+            border-radius: 60px;
+            margin: 15px 0;
             border: 3px solid gold;
             text-shadow: 2px 2px 0 #5e3c5e;
             box-shadow: 0 5px 0 #5e3c5e;
@@ -343,16 +336,16 @@
             background: #25D366;
             color: white;
             border: none;
-            border-radius: 50px;                 /* was 60px */
-            padding: 16px 16px;                   /* slightly less */
+            border-radius: 60px;
+            padding: 18px 20px;
             width: 100%;
-            font-size: 1.3rem;                     /* was 1.5rem */
+            font-size: 1.5rem;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 12px;
             margin: 10px 0;
             box-shadow: 0 8px 0 #128C7E;
             transition: 0.08s linear;
@@ -366,10 +359,10 @@
         .gift-message {
             background: #004d4d;
             color: #ffefc0;
-            padding: 12px 10px;
+            padding: 15px;
             border-radius: 40px;
             margin: 10px 0;
-            font-size: 1rem;
+            font-size: 1.1rem;
             border: 2px solid gold;
             display: none;
         }
@@ -379,43 +372,26 @@
         }
 
         .fine-print {
-            font-size: 0.85rem;                   /* was 0.9rem */
+            font-size: 0.9rem;
             color: #3d2b3d;
             background: #f9e9cf;
             padding: 8px;
             border-radius: 40px;
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .note {
-            font-size: 0.8rem;                     /* was 0.85rem */
+            font-size: 0.85rem;
             color: #666;
             margin-top: 5px;
             font-style: italic;
         }
 
-        /* Even tighter for very narrow screens (<=360px) */
-        @media (max-width: 360px) {
-            .main-card {
-                padding: 16px 8px 25px 8px;
-                border-radius: 28px;
-            }
-            .name-title h1 { font-size: 1.8rem; }
-            .full-name { font-size: 1.3rem; }
-            .balloon { font-size: 2.3rem; }
-            .cake-emoji { font-size: 3.8rem; }
-            .cake-cut-message { font-size: 1rem; }
-            .gift-title { font-size: 1.5rem; }
-            .fixed-amount { font-size: 1.8rem; }
-            .whatsapp-btn { font-size: 1.1rem; padding: 14px; }
-        }
-
-        /* Birthday animation also responsive */
         @media (max-width: 400px) {
-            .birthday-text {
-                font-size: 2.5rem;
-                padding: 20px 30px;
-            }
+            .name-title h1 { font-size: 2rem; }
+            .full-name { font-size: 1.5rem; }
+            .balloon { font-size: 2.8rem; }
+            .birthday-text { font-size: 2.5rem; padding: 20px 30px; }
             .birthday-text small { font-size: 1.2rem; }
         }
     </style>
@@ -435,10 +411,8 @@
 
     <!-- Audio Element for Birthday Song -->
     <audio id="birthdaySong" preload="auto">
-        <source src="./birthdaySong.mpeg" type="audio/mpeg">
-        <!-- fallback: if file missing, silence -->
-    </audio>
-    
+<source src="./birthdaySong.mpeg" type="audio/mpeg">
+</audio>
     <div class="main-card">
         <div class="name-title">
             <h1>🎂 Happy Birthday! 🎂</h1>
@@ -458,17 +432,17 @@
         <!-- Cake Section -->
         <div class="cake-section" id="cakeContainer">
             <span class="cake-emoji" id="cakeEmoji">🎂</span>
-            <div style="font-size: 1.8rem;">🍒🧁🍓</div>
+            <div style="font-size: 2rem;">🍒🧁🍓</div>
             <div class="cake-cut-message" id="cutCakeBtn">
                 <i class="fas fa-utensils"></i> Cut the cake, Mona! <i class="fas fa-birthday-cake"></i>
             </div>
-            <p id="cakeStatus" style="font-weight:600; margin-top:6px;">✨ ready to slice ✨</p>
+            <p id="cakeStatus" style="font-weight:600; margin-top:8px;">✨ ready to slice ✨</p>
         </div>
 
         <!-- Wishes -->
         <div class="wishes">
             💐 Many many happy returns of the day! 💐<br>
-            <span style="font-size: 0.95rem;">❤️ love you infinity ❤️</span>
+            <span style="font-size: 1rem;">❤️ love you infinity ❤️</span>
         </div>
 
         <!-- Gift Section -->
@@ -494,7 +468,7 @@
 
             <!-- FIXED AMOUNT -->
             <div class="fixed-amount">
-                <div style="font-size: 0.9rem;">🎁 GIFT AMOUNT 🎁</div>
+                <div style="font-size: 1rem;">🎁 GIFT AMOUNT 🎁</div>
                 <div>₹ <span id="fixedAmount">100</span></div>
             </div>
 
@@ -528,9 +502,9 @@
             const birthdaySong = document.getElementById('birthdaySong');
 
             // ========== CONFIGURATION ==========
-            let MONA_UPI_ID = "monaupi@id";  // Change to Mona's actual UPI ID
+            let MONA_UPI_ID = "mahanandapranab@okicici";  // Change to Mona's actual UPI ID
             const FIXED_AMOUNT = 100;  // Fixed amount in ₹
-            const BHAIYA_WHATSAPP = "919876543210";  // Change to your WhatsApp number
+            const BHAIYA_WHATSAPP = "917896072468";  // Change to your WhatsApp number
             // ====================================
 
             // Display fixed amount
@@ -662,7 +636,6 @@
             }
 
             // Cake cutting with full animation
-            let isCakeCut = false; // defined here, was missing in original
             cutBtn.addEventListener('click', function() {
                 if (!isCakeCut) {
                     isCakeCut = true;
@@ -752,6 +725,8 @@ Please send the money! Love you! ❤️
                 showMessage(`✅ WhatsApp opened! Send message to Bhaiya for ₹${formattedAmount}`);
             });
 
+            // Initialize cake state
+            let isCakeCut = false;
         })();
     </script>
 </body>
